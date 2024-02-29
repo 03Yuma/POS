@@ -3,6 +3,8 @@
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductsController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\TransaksiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,4 +26,5 @@ Route::prefix('category')->group(function () {
     Route::get('baby-kid', [ProductsController::class, 'bayi']);
 });
 
-Route
+Route::get('/user/id/{id}/name/{name}', [UserController::class, 'profile']);
+Route::get('/',[TransaksiController::class,'transaksi']);
